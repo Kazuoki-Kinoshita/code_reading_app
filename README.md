@@ -12,7 +12,7 @@
 
 ## 準備
 
-```
+```         
 $ git clone git@github.com:DiveintoCode-corp/diveintopost-rails6.git
 $ cd diveintopost-rails6
 $ bundle install --path vendor/bundle
