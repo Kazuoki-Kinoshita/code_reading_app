@@ -28,8 +28,7 @@ class AssignsController < ApplicationController
 
   def check_permission
     assign = Assign.find(params[:id])
-    if assign.user == current_user || assign.team.owner == current_user 
-    else
+    unless assign.user == current_user || assign.team.owner == current_user 
       redirect_to team_url(params[:team_id])
     end
   end
