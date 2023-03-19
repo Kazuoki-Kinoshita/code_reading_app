@@ -24,6 +24,7 @@ class AgendasController < ApplicationController
   def destroy
     if @agenda.user == current_user || @agenda.team.owner == current_user
       @agenda.destroy
+      AgendaMailer.agenda_mail(@agenda).deliver
       redirect_to dashboard_path, notice: "アジェンダを削除しました"
     end
   end
